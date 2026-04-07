@@ -270,6 +270,10 @@ p {
     margin-bottom: 4rem;
 }
 
+.section-header p {
+    margin: 0 auto;
+}
+
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
