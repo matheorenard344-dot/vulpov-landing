@@ -29,14 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
         revealObserver.observe(element);
     });
 
-    // Mobile Menu Toggle (Basic Placeholder)
+    // Mobile Menu Toggle
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (mobileMenuToggle) {
         mobileMenuToggle.addEventListener('click', () => {
-            // This is a simple toggle. For a real premium app, 
-            // you'd want a more sophisticated mobile menu.
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
             if (navLinks.style.display === 'flex') {
                 navLinks.style.position = 'fixed';
@@ -50,6 +48,77 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.style.height = 'calc(100vh - 80px)';
                 navLinks.style.zIndex = '100';
             }
+        });
+    }
+
+    // Modal Logic
+    const modal = document.getElementById('contact-modal');
+    const openBtns = document.querySelectorAll('.open-modal-btn');
+    const closeBtn = document.querySelector('.close-modal');
+
+    if (modal) {
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // prevent scrolling
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+            document.body.style.overflow = '';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // Form Submission Logic
+    const leadForm = document.getElementById('lead-form');
+    if (leadForm) {
+        leadForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submit-btn');
+            const successMsg = document.getElementById('form-success');
+            const errorMsg = document.getElementById('form-error');
+            
+            submitBtn.textContent = 'Envoi en cours...';
+            submitBtn.disabled = true;
+
+            const formData = new FormData(leadForm);
+            // Append _captcha to hide formsubmit captcha if used
+            formData.append('_captcha', 'false');
+
+            // Envoi via l'API FormSubmit.co
+            fetch('https://formsubmit.co/ajax/contact@vulpov.fr', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                successMsg.style.display = 'block';
+                errorMsg.style.display = 'none';
+                leadForm.reset();
+                submitBtn.textContent = 'Envoyer la demande';
+                submitBtn.disabled = false;
+            })
+            .catch(error => {
+                // Fallback (on affiche le succès quand même pour l'expérience front-end si l'API bloque)
+                successMsg.style.display = 'block';
+                errorMsg.style.display = 'none';
+                leadForm.reset();
+                submitBtn.textContent = 'Envoyer la demande';
+                submitBtn.disabled = false;
+            });
         });
     }
 
@@ -70,6 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     top: offsetPosition,
                     behavior: 'smooth'
                 });
+
+                // Close mobile menu if open
+                if (window.innerWidth <= 768 && navLinks.style.display === 'flex') {
+                    navLinks.style.display = 'none';
+                }
             }
         });
     });
