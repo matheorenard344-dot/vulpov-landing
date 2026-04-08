@@ -147,8 +147,8 @@ p {
 }
 
 .logo-image.circular {
-    width: 60px;
-    height: 60px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
     overflow: hidden;
     background: #000;
@@ -159,10 +159,10 @@ p {
 }
 
 .logo-image.circular img {
-    width: 70%;
-    height: 70%;
-    object-fit: contain;
-    object-position: center;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .nav-links {

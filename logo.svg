@@ -1,0 +1,39 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <linearGradient id="fox-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Outer Circle with Gradient Border -->
+  <circle cx="250" cy="250" r="240" fill="black" stroke="url(#logo-gradient)" stroke-width="8"/>
+  
+  <!-- Geometric Fox Head -->
+  <g transform="translate(140, 100) scale(1.1)">
+    <!-- Ears -->
+    <path d="M40 80 L0 0 L90 60 Z" stroke="url(#fox-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M180 80 L220 0 L130 60 Z" stroke="url(#fox-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Face -->
+    <path d="M40 80 L110 210 L180 80 L110 60 L40 80 Z" stroke="url(#fox-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Cheeks/Sides -->
+    <path d="M40 80 L10 140 L110 210" stroke="url(#fox-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M180 80 L210 140 L110 210" stroke="url(#fox-gradient)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Inner Details -->
+    <path d="M110 60 L110 210" stroke="url(#fox-gradient)" stroke-width="2" opacity="0.6"/>
+    <path d="M40 80 L110 150 L180 80" stroke="url(#fox-gradient)" stroke-width="2" opacity="0.6"/>
+  </g>
+  
+  <!-- VULPOV Text -->
+  <text x="250" y="380" text-anchor="middle" fill="white" style="font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 72px; letter-spacing: 4px;">VULPOV</text>
+  
+  <!-- Slogan -->
+  <text x="250" y="440" text-anchor="middle" fill="white" opacity="0.8" style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: 2px;">L'INSTINCT DU BAR.</text>
+</svg>
