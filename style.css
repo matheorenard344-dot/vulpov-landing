@@ -900,6 +900,85 @@ p {
     border-radius: 2px;
 }
 
+.urgency-text {
+    margin-top: 1.5rem;
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Partners Section */
+.partners {
+    padding: 3rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.partners-title {
+    text-align: center;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    color: var(--text-secondary);
+}
+
+.partners-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    opacity: 0.6;
+}
+
+.partner-placeholder {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    background: var(--glass-bg);
+}
+
+/* Testimonials Placeholder */
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.testimonial-card-placeholder {
+    max-width: 500px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 2.5rem;
+    text-align: center;
+}
+
+.stars {
+    color: #FBBF24;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.avatar-placeholder {
+    width: 50px;
+    height: 50px;
+    background: var(--glass-bg);
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.dev-note {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    opacity: 0.5;
+    font-style: italic;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
     .oracle-banner {
