@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vulpov.fr/sitemap.xml
+Sitemap: https://www.vulpov.fr/sitemap.xml
