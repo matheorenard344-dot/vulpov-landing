@@ -147,4 +147,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // FAQ Accordion Logic
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(q => {
+        q.addEventListener('click', () => {
+            const accordion = q.parentElement;
+            const isActive = accordion.classList.contains('active');
+            
+            // Close all others
+            document.querySelectorAll('.faq-accordion').forEach(acc => acc.classList.remove('active'));
+            
+            // Open clicked one if it wasn't active
+            if (!isActive) {
+                accordion.classList.add('active');
+            }
+        });
+    });
 });
