@@ -1,4 +1,12 @@
 User-agent: *
 Allow: /
 
+# Dossiers privés et routes dynamiques SaaS — bloqués pour tous les robots
+Disallow: /api/
+Disallow: /dashboard
+Disallow: /admin
+Disallow: /settings
+Disallow: /*?bar=*
+Disallow: /*?*
+
 Sitemap: https://www.vulpov.fr/sitemap.xml
