@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Dossiers privés et routes dynamiques SaaS - bloqués pour tous les robots
+# Dossiers privés et routes dynamiques - bloqués pour tous les robots
 Disallow: /api/
 Disallow: /dashboard
 Disallow: /admin
