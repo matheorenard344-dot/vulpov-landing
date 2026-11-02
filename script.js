@@ -78,6 +78,63 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Legal Modal Logic
+    const legalModal = document.getElementById('legal-modal');
+    const legalOpenBtns = document.querySelectorAll('.open-legal-btn');
+    const legalCloseBtn = document.querySelector('.close-legal-modal');
+    const legalTabBtns = document.querySelectorAll('.legal-tab-btn');
+    const legalTabContents = document.querySelectorAll('.legal-tab-content');
+
+    function switchLegalTab(tabId) {
+        legalTabBtns.forEach(btn => {
+            if (btn.getAttribute('data-tab') === tabId) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+        legalTabContents.forEach(content => {
+            if (content.id === `legal-tab-${tabId}`) {
+                content.classList.add('active');
+            } else {
+                content.classList.remove('active');
+            }
+        });
+    }
+
+    if (legalModal) {
+        legalOpenBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tab = btn.getAttribute('data-legal') || 'mentions';
+                switchLegalTab(tab);
+                legalModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        if (legalCloseBtn) {
+            legalCloseBtn.addEventListener('click', () => {
+                legalModal.classList.remove('show');
+                document.body.style.overflow = '';
+            });
+        }
+
+        legalTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.getAttribute('data-tab');
+                switchLegalTab(tab);
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === legalModal) {
+                legalModal.classList.remove('show');
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
     // Form Submission Logic
     const leadForm = document.getElementById('lead-form');
     if (leadForm) {

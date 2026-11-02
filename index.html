@@ -150,7 +150,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 
-    <link rel="stylesheet" href="style.css?v=20">
+    <link rel="stylesheet" href="style.css?v=21">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -257,7 +257,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
 
@@ -419,18 +418,69 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="/" class="logo">Vulpov</a>
-                    <p>La solution SaaS leader pour l'automatisation et l'ambiance des bars et restaurants.</p>
+            <div class="footer-grid">
+                <div class="footer-col footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-image circular">
+                            <img src="logo.svg" alt="Vulpov - Solution SaaS Jukebox connecté et Menu QR pour bars">
+                        </div>
+                    </a>
+                    <p class="footer-desc">La solution SaaS d'animation, jukebox interactif Spotify et menu digital QR pour bars et restaurants.</p>
+                    <div class="footer-badge">
+                        <span>✦ 15 jours d'essai 100% gratuit</span>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <button class="btn btn-secondary open-modal-btn">Démarrer 15j d'essai gratuit</button>
-                    <a href="#">Légal</a>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-nav">
+                        <li><a href="#features">Fonctionnalités</a></li>
+                        <li><a href="#pricing">Tarifs (49€ HT/mois)</a></li>
+                        <li><a href="#faq">Questions fréquentes</a></li>
+                        <li><button class="footer-link-btn open-modal-btn">Demander une démo (15 min)</button></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Légal & Réglementaire</h4>
+                    <ul class="footer-nav">
+                        <li><a href="mentions-legales.html" class="open-legal-btn" data-legal="mentions">Mentions légales (LCEN)</a></li>
+                        <li><a href="mentions-legales.html#rgpd" class="open-legal-btn" data-legal="rgpd">Confidentialité & RGPD</a></li>
+                        <li><a href="mentions-legales.html#cgu" class="open-legal-btn" data-legal="cgu">Conditions Générales (CGU / CGV)</a></li>
+                        <li><a href="mentions-legales.html#cookies" class="open-legal-btn" data-legal="cookies">Cookies & Droits musicaux</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact & Support</h4>
+                    <ul class="footer-nav">
+                        <li><a href="mailto:contact@vulpov.fr">contact@vulpov.fr</a></li>
+                        <li><span class="footer-text">Support Horeca 7j/7</span></li>
+                        <li><span class="footer-text">Mise en place en moins de 2h</span></li>
+                        <li><button class="footer-link-btn open-modal-btn">Démarrer mes 15 jours offerts</button></li>
+                    </ul>
                 </div>
             </div>
+
+            <!-- Mentions obligatoires légales directes (Loi LCEN, RGPD, SACEM / Droits musicaux) -->
+            <div class="footer-legal-notice">
+                <div class="footer-legal-item">
+                    <strong>Éditeur du service :</strong> Vulpov — Plateforme logicielle SaaS dédiée aux professionnels Horeca. Contact : <a href="mailto:contact@vulpov.fr">contact@vulpov.fr</a>.
+                </div>
+                <div class="footer-legal-item">
+                    <strong>Hébergement :</strong> Vercel Inc., 440 N Barranca Ave #4133 Covina, CA 91723, États-Unis (<a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a>).
+                </div>
+                <div class="footer-legal-item">
+                    <strong>Protection des données (RGPD) :</strong> Les données collectées via ce site sont réservées à la gestion des demandes de démo et à l'activation des essais gratuits. Conformément au RGPD (Règlement UE 2016/679) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification et d'effacement de vos données sur simple demande à <a href="mailto:contact@vulpov.fr">contact@vulpov.fr</a>. Ce site ne dépose aucun cookie traceur publicitaire nécessitant consentement.
+                </div>
+                <div class="footer-legal-item">
+                    <strong>Propriété intellectuelle & Droits musicaux :</strong> Spotify® est une marque déposée de Spotify AB. Vulpov est un service logiciel tiers indépendant utilisant les interfaces de programmation Spotify et n'est pas affilié, sponsorisé ou approuvé par Spotify AB. Conformément à la législation en vigueur, chaque établissement exploitant (bar, restaurant) demeure seul responsable de la régularité de ses diffusions musicales publiques et des redevances associées (SACEM / SPRÉ).
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p>&copy; 2026 Vulpov. Tous droits réservés.</p>
+                <p>Solution SaaS conçue pour les bars & restaurants indépendants</p>
             </div>
         </div>
     </footer>
@@ -471,6 +521,92 @@
         </div>
     </div>
 
-    <script src="script.js?v=8"></script>
+    <!-- Legal Details Modal -->
+    <div id="legal-modal" class="modal">
+        <div class="modal-content legal-modal-content">
+            <span class="close-modal close-legal-modal">&times;</span>
+            <div class="legal-modal-header">
+                <h2>Informations Légales & Conformité</h2>
+                <p>Mentions obligatoires conformément à la législation française et européenne (LCEN & RGPD).</p>
+            </div>
+
+            <div class="legal-tabs">
+                <button class="legal-tab-btn active" data-tab="mentions">Mentions Légales</button>
+                <button class="legal-tab-btn" data-tab="rgpd">Confidentialité & RGPD</button>
+                <button class="legal-tab-btn" data-tab="cgu">Conditions Générales (CGU / CGV)</button>
+                <button class="legal-tab-btn" data-tab="cookies">Cookies & Droits Musicaux</button>
+            </div>
+
+            <!-- Tab 1: Mentions légales -->
+            <div id="legal-tab-mentions" class="legal-tab-content active">
+                <h3>1. Éditeur de la plateforme</h3>
+                <p>Le site internet <strong>https://vulpov.fr</strong> et le service SaaS associé sont édités par l'équipe <strong>Vulpov</strong>, fournissant des solutions logicielles d'animation et de commande en salle pour débits de boissons et restaurants.</p>
+                <ul>
+                    <li><strong>Dénomination :</strong> Vulpov</li>
+                    <li><strong>Courrier électronique :</strong> <a href="mailto:contact@vulpov.fr">contact@vulpov.fr</a></li>
+                    <li><strong>Directeur de la publication :</strong> Direction Vulpov</li>
+                </ul>
+
+                <h3>2. Hébergeur du site</h3>
+                <p>Le site est hébergé par :</p>
+                <ul>
+                    <li><strong>Prestataire :</strong> Vercel Inc.</li>
+                    <li><strong>Adresse :</strong> 440 N Barranca Ave #4133, Covina, CA 91723, États-Unis</li>
+                    <li><strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener">https://vercel.com</a></li>
+                </ul>
+
+                <h3>3. Propriété intellectuelle</h3>
+                <p>Tous les éléments du site vulpov.fr (textes, images, graphismes, logo, icônes, logiciels et code) sont protégés au titre des droits de propriété intellectuelle. Toute reproduction, représentation, modification ou diffusion, totale ou partielle, sans l'accord exprès et écrit de Vulpov est strictement interdite.</p>
+            </div>
+
+            <!-- Tab 2: RGPD -->
+            <div id="legal-tab-rgpd" class="legal-tab-content">
+                <h3>1. Responsable du traitement</h3>
+                <p>Le responsable du traitement des données personnelles est <strong>Vulpov</strong> (contact@vulpov.fr).</p>
+
+                <h3>2. Données collectées et finalités</h3>
+                <p>Dans le cadre des formulaires de demande de démonstration et d'activation de la période d'essai gratuit de 15 jours, les données suivantes sont collectées : nom, prénom, email professionnel, nom de l'établissement, numéro de téléphone (facultatif).</p>
+                <p>Ces données sont strictement utilisées pour :</p>
+                <ul>
+                    <li>L'organisation et la tenue de la démonstration personnalisée (15 min) ;</li>
+                    <li>La configuration de l'espace de test de 15 jours gratuits pour votre bar ;</li>
+                    <li>Le support technique et la gestion de la relation client.</li>
+                </ul>
+
+                <h3>3. Durée de conservation et destinataires</h3>
+                <p>Les données prospects sont conservées pendant une durée maximale de 3 ans à compter du dernier contact actif. Les données ne sont jamais vendues, louées ni cédées à des tiers à des fins commerciales ou publicitaires.</p>
+
+                <h3>4. Vos droits (RGPD)</h3>
+                <p>Conformément au Règlement Général sur la Protection des Données (RGPD - Règlement UE 2016/679) et à la loi Informatique et Libertés, vous bénéficiez à tout moment d'un droit d'accès, de rectification, de portabilité, de suppression et d'opposition sur vos données. Pour faire valoir vos droits, contactez : <a href="mailto:contact@vulpov.fr">contact@vulpov.fr</a>.</p>
+            </div>
+
+            <!-- Tab 3: CGU / CGV -->
+            <div id="legal-tab-cgu" class="legal-tab-content">
+                <h3>1. Objet du service</h3>
+                <p>Vulpov met à disposition des professionnels de l'hôtellerie, de la restauration et des bars (Horeca) un logiciel SaaS sans matériel permettant d'animer leur salle : consultation de menu via QR code, sélection collaborative de titres sur compte Spotify avec contrôle anti-spam, chat et jeux.</p>
+
+                <h3>2. Essai gratuit de 15 jours</h3>
+                <p>Chaque nouvel établissement peut activer une période d'essai gratuit de <strong>15 jours consécutifs</strong>, 100% fonctionnelle et sans aucun engagement. Aucun moyen de paiement n'est exigé obligatoirement pour débuter l'essai et aucun prélèvement n'est effectué sans confirmation explicite du gérant.</p>
+
+                <h3>3. Tarification et résiliation</h3>
+                <p>À l'issue de l'essai gratuit, l'abonnement mensuel à Vulpov est proposé à <strong>49€ HT par mois</strong> sans engagement de durée. L'abonnement est résiliable à tout moment sans motif ni frais sur simple notification par email.</p>
+
+                <h3>4. Responsabilité musicale (SACEM / SPRÉ)</h3>
+                <p>Vulpov est un outil technologique permettant de programmer la lecture de titres via les API Spotify. L'établissement exploitant (bar, restaurant) demeure légalement le seul diffuseur public et conserve l'entière responsabilité de s'acquitter des redevances obligatoires pour la sonorisation publique auprès de la SACEM et de la SPRÉ.</p>
+            </div>
+
+            <!-- Tab 4: Cookies & Spotify -->
+            <div id="legal-tab-cookies" class="legal-tab-content">
+                <h3>1. Politique relative aux cookies</h3>
+                <p>Le site https://vulpov.fr applique une politique stricte de respect de la vie privée. Il ne dépose <strong>aucun cookie tiers publicitaire</strong>, ni aucun traceur de profilage ou de re-ciblage.</p>
+                <p>Seuls des cookies techniques strictement nécessaires au fonctionnement du site et de session peuvent être utilisés, dispensés de consentement préalable selon les directives de la CNIL.</p>
+
+                <h3>2. Mention de marque Spotify®</h3>
+                <p>Spotify® est une marque déposée de <strong>Spotify AB</strong>. Vulpov utilise les interfaces de programmation d'application (API) publiques de Spotify afin de permettre la sélection musicale par les clients. Vulpov est un éditeur de logiciels tiers indépendant et n'entretient aucun lien capitalistique, d'affiliation ou de sponsoring avec Spotify AB.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=9"></script>
 </body>
 </html>
